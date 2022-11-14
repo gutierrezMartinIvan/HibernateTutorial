@@ -3,27 +3,31 @@ package org.beniko.hibernateConnection;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name = "clients")
-public class Clients {
+@Table(name = "cliente")
+public class Client {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "Id")
+    @Column(name = "id")
     private Integer id;
 
-    @Column(name = "Name")
+    @Column(name = "nombre")
     private String name;
 
-    @Column(name = "Surname")
+    @Column(name = "apellido")
     private String surname;
 
-    @Column(name = "Address")
+    @Column(name = "direccion")
     private String address;
 
-    public Clients() {
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "id")
+    private ClientDetail clientDetail;
+
+    public Client() {
     }
 
-    public Clients(String name, String surname, String address) {
+    public Client(String name, String surname, String address) {
         this.name = name;
         this.surname = surname;
         this.address = address;
@@ -57,13 +61,11 @@ public class Clients {
         this.address = address;
     }
 
-    @Override
-    public String toString() {
-        return "Clients{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", surname='" + surname + '\'' +
-                ", address='" + address + '\'' +
-                '}';
+    public ClientDetail getClientDetail() {
+        return clientDetail;
+    }
+
+    public void setClientDetail(ClientDetail clientDetail) {
+        this.clientDetail = clientDetail;
     }
 }

@@ -4,27 +4,25 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 
-public class SaveClientTest {
+public class InsertClient {
     public static void main(String[] args) {
-
-        SessionFactory myFactory = new Configuration().configure("hibernate.cfg.xml").addAnnotatedClass(Clients.class)
+        SessionFactory myFactory = new Configuration().configure("hibernate.cfg.xml")
+                .addAnnotatedClass(Client.class)
+                .addAnnotatedClass(ClientDetail.class)
                 .buildSessionFactory();
-
         Session mySession = myFactory.openSession();
 
         try {
-            Clients client1 = new Clients("asas", "dfdf", "eeee");
+            Client client1 = new Client("Martin", "Gutierrez", "Nose");
+            ClientDetail clientDetail1 = new ClientDetail("www.beniko.com.ar", "121314", "No comments");
+            client1.setClientDetail(clientDetail1);
             mySession.beginTransaction();
             mySession.persist(client1);
             mySession.getTransaction().commit();
-
-            mySession.beginTransaction();
-            Clients savedClient = mySession.get(Clients.class, client1.getId());
-            System.out.println(savedClient);
             mySession.close();
-        }
-        finally {
+        }finally {
             myFactory.close();
         }
+
     }
 }
