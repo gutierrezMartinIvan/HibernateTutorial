@@ -4,9 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2e3a7eb3-c75e-4881-8303-7c5e091f5e6b" name="Changes" comment="created the first relationship">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/beniko/hibernateConnection/DeleteClient.java" afterDir="false" />
+    <list default="true" id="2e3a7eb3-c75e-4881-8303-7c5e091f5e6b" name="Changes" comment="added the delete method for a relationship">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/beniko/hibernateConnection/DeleteClientDetail.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/beniko/hibernateConnection/Orders.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/beniko/hibernateConnection/getClient.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/beniko/hibernateConnection/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/beniko/hibernateConnection/Client.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/beniko/hibernateConnection/ClientDetail.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/beniko/hibernateConnection/ClientDetail.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,9 +59,22 @@
       <recent name="org.beniko.hibernateConnection" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.DeleteClient">
+  <component name="RunManager" selected="Application.DeleteClientDetail">
     <configuration name="DeleteClient" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.beniko.hibernateConnection.DeleteClient" />
+      <module name="hibernateRelationship" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.beniko.hibernateConnection.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DeleteClientDetail" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.beniko.hibernateConnection.DeleteClientDetail" />
       <module name="hibernateRelationship" />
       <extension name="coverage">
         <pattern>
@@ -95,9 +112,9 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="UpdateClient" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="org.beniko.hibernateConnection.UpdateClient" />
-      <module name="hibernateTest" />
+    <configuration name="getClient" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.beniko.hibernateConnection.getClient" />
+      <module name="hibernateRelationship" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="org.beniko.hibernateConnection.*" />
@@ -108,30 +125,20 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="UpdateClientKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
-      <option name="ALTERNATIVE_JRE_PATH" value="openjdk-19" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
-      <option name="MAIN_CLASS_NAME" value="org.beniko.hibernateConnection.UpdateClientKt" />
-      <module name="hibernateTest" />
-      <shortenClasspath name="NONE" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <list>
       <item itemvalue="Application.DeleteClient" />
+      <item itemvalue="Application.DeleteClientDetail" />
+      <item itemvalue="Application.getClient" />
       <item itemvalue="Application.InsertClient" />
-      <item itemvalue="Application.UpdateClient" />
       <item itemvalue="Application.JDBCTest" />
-      <item itemvalue="Kotlin.UpdateClientKt" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.DeleteClientDetail" />
+        <item itemvalue="Application.getClient" />
         <item itemvalue="Application.DeleteClient" />
         <item itemvalue="Application.InsertClient" />
         <item itemvalue="Application.JDBCTest" />
-        <item itemvalue="Application.UpdateClient" />
-        <item itemvalue="Kotlin.UpdateClientKt" />
       </list>
     </recent_temporary>
   </component>
@@ -172,7 +179,14 @@
       <option name="project" value="LOCAL" />
       <updated>1668445297687</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="added the delete method for a relationship">
+      <created>1668518738979</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1668518738979</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -191,6 +205,7 @@
     <MESSAGE value="selecting the clients from the database" />
     <MESSAGE value="update and deleted with hibernate" />
     <MESSAGE value="created the first relationship" />
-    <option name="LAST_COMMIT_MESSAGE" value="created the first relationship" />
+    <MESSAGE value="added the delete method for a relationship" />
+    <option name="LAST_COMMIT_MESSAGE" value="added the delete method for a relationship" />
   </component>
 </project>

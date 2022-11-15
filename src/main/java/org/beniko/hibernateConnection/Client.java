@@ -68,4 +68,14 @@ public class Client {
     public void setClientDetail(ClientDetail clientDetail) {
         this.clientDetail = clientDetail;
     }
+
+    @Override
+    public String toString() {
+        return "Client{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", surname='" + surname + '\'' +
+                ", address='" + address + '\'' +
+                '}';
+    }
 }

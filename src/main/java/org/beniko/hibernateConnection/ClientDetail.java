@@ -20,6 +20,9 @@ public class ClientDetail {
     @Column(name = "comentarios")
     private String comentarios;
 
+    @OneToOne(mappedBy = "clientDetail")
+    private Client client;
+
     public ClientDetail() {
     }
 
@@ -51,5 +54,23 @@ public class ClientDetail {
 
     public void setComentarios(String comentarios) {
         this.comentarios = comentarios;
+    }
+
+    public Client getClient() {
+        return client;
+    }
+
+    public void setClient(Client client) {
+        this.client = client;
+    }
+
+    @Override
+    public String toString() {
+        return "ClientDetail{" +
+                "id=" + id +
+                ", web='" + web + '\'' +
+                ", tfno='" + tfno + '\'' +
+                ", comentarios='" + comentarios + '\'' +
+                '}';
     }
 }
