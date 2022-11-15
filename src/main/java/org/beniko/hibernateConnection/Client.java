@@ -2,6 +2,9 @@ package org.beniko.hibernateConnection;
 
 import jakarta.persistence.*;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Entity
 @Table(name = "cliente")
 public class Client {
@@ -23,6 +26,9 @@ public class Client {
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "id")
     private ClientDetail clientDetail;
+
+    @OneToMany(mappedBy = "client", cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.DETACH, CascadeType.REFRESH})
+    private List<Order> orders;
 
     public Client() {
     }
@@ -67,6 +73,12 @@ public class Client {
 
     public void setClientDetail(ClientDetail clientDetail) {
         this.clientDetail = clientDetail;
+    }
+
+    public void addOrder(Order order) {
+     if (orders == null) orders = new ArrayList<>();
+     orders.add(order);
+     order.setClient(this);
     }
 
     @Override
