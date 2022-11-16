@@ -75,6 +75,10 @@ public class Client {
         this.clientDetail = clientDetail;
     }
 
+    public List<Order> getOrders() {
+        return orders;
+    }
+
     public void addOrder(Order order) {
      if (orders == null) orders = new ArrayList<>();
      orders.add(order);

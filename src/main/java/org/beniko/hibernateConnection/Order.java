@@ -2,6 +2,10 @@ package org.beniko.hibernateConnection;
 
 import jakarta.persistence.*;
 import java.util.Date;
+import java.util.GregorianCalendar;
+
+@Entity
+@Table(name = "PEDIDO")
 public class Order {
 
     @Id
@@ -10,7 +14,7 @@ public class Order {
     private Integer id;
 
     @Column(name = "FECHA")
-    private Date date;
+    private GregorianCalendar date;
 
     @Column(name = "FORMA_PAGO")
     private String paymentMethod;
@@ -19,10 +23,17 @@ public class Order {
     @JoinColumn(name = "CLIENTE_ID")
     private Client client;
 
-    public Order(Date date, String paymentMethod, Client client) {
+    public Order(GregorianCalendar date, String paymentMethod, Client client) {
         this.date = date;
         this.paymentMethod = paymentMethod;
         this.client = client;
+    }
+
+    public Order(GregorianCalendar date) {
+        this.date = date;
+    }
+
+    public Order() {
     }
 
     public Integer getId() {
@@ -33,11 +44,11 @@ public class Order {
         this.id = id;
     }
 
-    public Date getDate() {
+    public GregorianCalendar getDate() {
         return date;
     }
 
-    public void setDate(Date date) {
+    public void setDate(GregorianCalendar date) {
         this.date = date;
     }
 
